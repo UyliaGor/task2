@@ -39,7 +39,7 @@ public class RunTest {
         $x("//input[@id='subjectsInput']").scrollTo();
         $x("//input[@id='subjectsInput']").val("Maths").pressEnter();
         $x("//div[@id='hobbiesWrapper']//label[1][@for='hobbies-checkbox-1']").click();
-        $x("//*[@id='uploadPicture']").uploadFile(new File("src/test/img.jpg"));
+        $x("//*[@id='uploadPicture']").uploadFile(new File("src/test/resources/img.jpg"));
         $x("//textarea[@class='form-control']").val("Moscow").pressEnter();
         $x("//div[@id='state']").scrollTo();
         $x("//div[@id='state']").click();
