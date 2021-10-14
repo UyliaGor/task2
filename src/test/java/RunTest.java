@@ -37,18 +37,14 @@ public class RunTest {
         $(By.xpath("//select[@class='react-datepicker__month-select']")).selectOption("November");
         $(By.xpath("//div[@aria-label='Choose Wednesday, November 13th, 1991']")).click();
         $(By.xpath("//input[@id='subjectsInput']")).scrollTo();
-        $(By.xpath("//input[@id='subjectsInput']")).val("Testing").pressEnter();
-        //$(By.xpath("//div[@id='hobbiesWrapper']//label[1][@for='hobbies-checkbox-1']")).shouldBe(visible);
+        $x("//input[@id='subjectsInput']").val("Maths").pressEnter();
+        $(By.xpath("//div[@id='hobbiesWrapper']//label[1][@for='hobbies-checkbox-1']")).click();
         $(By.xpath("//*[@id='uploadPicture']")).uploadFile(new File("src/test/img.jpg"));
         $(By.xpath("//textarea[@class='form-control']")).val("Moscow").pressEnter();
-        //$(By.xpath("//div[@id='state']//input")).setValue("NCR").pressEnter();
-        //$(By.xpath("//div[contains(text(),'NCR')]")).click();
         $x("//div[@id='state']").scrollTo();
         $x("//div[@id='state']").click();
         $x("//div[contains(@id,'react-select')][text()='NCR']").click();
-        //$x("//div[@id='city']").click();
         $(By.xpath("//div[@id='city']//input")).setValue("Noida").pressEnter();
-        //$(By.xpath("//div[text()='Noida']")).click();
         $(By.xpath("//button[@id='submit']")).click();
         $(By.xpath("//*[@id='example-modal-sizes-title-lg']")).shouldHave(text("Thanks for submitting the form"));
 
@@ -63,7 +59,7 @@ public class RunTest {
 
         // сравниваем форму с некорректными значениями
         Assertions.assertEquals($(By.xpath("//tbody/tr[1]/td[2]")).getText(), "Ivanova", "совпадение не найдено");
-        Assertions.assertEquals($(By.xpath("//tbody/tr[6]/td[2]")).getText(), "Testing", "совпадение не найдено");
+
     }
     @After
     public void driverClose() {
